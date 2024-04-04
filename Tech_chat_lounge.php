@@ -1,52 +1,73 @@
+<!--inc_QueryResults.php -->
 <!DOCTYPE html>
-<!-- Created by Kondabolu
-    555555555555555555555
- -->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>PHP Three-Tier Data Access</title>
-        <style type="text/css">
-            body {font-family: sans-serif;
-                    background-color: lightyellow;
-                    margin: 50px;}
-            table{background-color: lightyellow;
-                  border-collapse: collapse;
-                    border: 1px solid gray;}
-            td{padding: 5px;}
-            tr:nth-child(odd){background-color: white;}
-            table, td, th {border: 1px solid black;}
-        </style>
-    </head>
-    <body>
-        <h1>Querying a Mysql database</h1>
-        <form method="post" action="#">
-        <p>Select a field to display:
-            <!--add a select box containing options -->
-            <!-- for SELECT Query -->
-            <select name="select">
-                <?php 
-                function sticky($value){
-                    //function to retain value on rountrip in the select/option tag.
-                    $selected="";
-                    if(isset($_POST['select'])){
-                        $_POST['select'] == $value ? $selected = 'selected' :$selected = "";
+<head>
+    <meta charset="UTF-8">
+    <title>Parametrised Queries</title>
+    <!-- created by Kondabolu -->
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black; border-collapse: collapse;
+        }
+        td { padding: 5px; }
+        body {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        select {
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Database Connectivity Parametrized Queries</h1>
+    <form action="" method="POST">
+        <span>
+            <label>Select Student Name: </label>
+            <select id="studentselect" name="studentselect">
+                <?php
+                include("Inc_IntermediaryClass.php");
+                $intClass = new BusinessTierClass();
+                $result = $intClass->filloptions();
+
+                while ($row = $result->fetch_assoc()) {
+                    $selected = NULL;
+                    if (isset($_POST['submit'])) {
+                        if ($_POST['studentselect'] == $row['stuID']) {
+                            $selected = "selected";
+                        }
                     }
-                    echo $selected;
-                }//end function
+                    echo "<option value=".$row['stuID']." ".$selected.">".$row['studentName']."</option>";
+                }
                 ?>
-                <option value="*" <?php sticky("*") ?> >All columns in the table</option>
-                <option value="make, model" <?php sticky("make, model") ?>>Car Make and Model</option>
-                <option value="model" <?php sticky("model") ?>>Car Model</option>
-                <option value="make, model, mileage, year" <?php sticky("make, model, mileage, year") ?>>Car Make, Model, Mileage and Model</option>
             </select>
-        </p>
-        <p><input type="submit" value="Select Query" name="selectQuery"</p>
-        </form>
-        <?php
-            if(isset($_POST['selectQuery']))
-            {include('inc_QueryResults.php');
-            }//end if
-        ?>
-    </body>
+            <input type="submit" value="submit" name="submit"/>
+        </span>
+    </form>
+    <?php
+    if (isset($_POST['submit'])) {
+        $stuID = $_POST['studentselect']; // Corrected variable name
+        $result = $intClass->getData($stuID); // Corrected variable name
+
+        if ($result) {
+            echo "<h4>Grade Details</h4>";
+            echo "<table><tr><td>Student ID</td><td>Student Full Name</td><td>Subject Code</td><td>Subject Name</td><td>Semester</td><td>Grade Description</td><td>Letter Grade</td></tr>";
+
+            while ($row = $result->fetch_assoc()) { // Corrected method name
+                echo "<tr>";
+                echo "<td>".$row['stuID']."</td>";
+                echo "<td>".$row['stuName']."</td>";
+                echo "<td>".$row['subjectCode']."</td>";
+                echo "<td>".$row['subjectName']."</td>";
+                echo "<td>".$row['semester']."</td>";
+                echo "<td>".$row['gradeDescription']."</td>";
+                echo "<td>".$row['letterGrade']."</td></tr>";
+            }
+            echo "</table>";
+        } else {
+            echo $intClass->error; // Added missing arrow (->) operator
+        }
+    }
+    ?>
+</body>
 </html>
