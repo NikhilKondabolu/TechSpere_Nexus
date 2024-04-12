@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="StyleSheet.css">
 </head>
 <body>
-
     <nav>
         <a href="HomePage.php">Home</a>
         <a href="about.php">About Us</a>
