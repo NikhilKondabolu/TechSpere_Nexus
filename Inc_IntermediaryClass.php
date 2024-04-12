@@ -12,13 +12,13 @@ class BusinessTierClass {
     }
 
     // Method to get data
-    function getData($stuID) {
+    function getData($id) {
         $result = NULL; // to store data
 
-        $selectQuery = "SELECT n.stuID, CONCAT(n.stuFirstName, ' ', n.stuLastName) as stuName, j.subjectCode, j.subjectName, s.semester, s.gradeDescription, s.letterGrade FROM students n JOIN student_subject s ON (n.stuID = s.studentID) JOIN subjects j ON (j.subjectCode = s.subjectCode) where studentId = ?";
-        $type="i";
+        $selectQuery = "SELECT  topic, post_title, post_content, pro_tip,trick FROM tech_topics where topic = ?";
+        $type="s";
         $connectClass = new DataConnectClass();
-        $result = $connectClass->ParamSelectQuery($selectQuery, $type, $stuID);
+        $result = $connectClass->ParamSelectQuery($selectQuery, $type, $id);
 
         if ($result) {
             return $result;
@@ -31,7 +31,7 @@ class BusinessTierClass {
     public function filloptions() {
         $result = NULL; // to store data
 
-        $selectQuery = "SELECT stuID, CONCAT(stuFirstName, ' ', stuLastName) AS studentName FROM students";
+        $selectQuery = "SELECT topic, post_content FROM tech_topics";
         $connectClass = new DataConnectClass();
         $result = $connectClass->SimpleSelectQuery($selectQuery);
 

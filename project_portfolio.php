@@ -9,8 +9,8 @@
 <body>
 
     <nav>
-        <a href="HomePage.php">Home</a>
-        <a href="about.php">About Us</a>
+        <a href="HomePage.html">Home</a>
+        <a href="about.html">About Us</a>
         <a href="service_inquiry.php"> Service Inquiry </a>
         <a href="project_portfolio.php"> Project Portfolio</a>
         <a href="tech_trends_poll.php"> Tech Trends Poll</a>
