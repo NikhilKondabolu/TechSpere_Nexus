@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="aboutStyleSheet.css">
 </head>
 <body>
 
@@ -39,42 +39,40 @@
     <div class="leaders">
         <div class="item">
             <img src="./images/image1.jpg" alt="CEO">
-            <div>
+            <div class="details" >
+                <h2>Nikhil Kondabolu</h2>
+                <p>Chief Executive Officer</p>
                 <ul>
-                    <li>Nikhil Kondabolu</li>
-                    <li>Cheif Executive officer</li>
-                    <li>+1 (913)-412-6767</li>
-                    <li>nikhilceo@gmail.com</li>
+                    <li> <strong>Phone:</strong>  +1 (913)-412-6767</li>
+                    <li> <strong>Email:</strong>  nikhilceo@gmail.com</li>
                 </ul>
             </div>
         </div>
         <div class="item">
             <img src="./images/image1.jpg" alt="CFO">
-            <div>
+            <div class= "details">
+                <h2>Eswar Kandula</h2>
+                <p>Chief Financial Office</p>
                 <ul>
-                    <li>Eswar Kandula</li>
-                    <li>Chief Financial Office</li>
-                    <li>+1 (913)-846-6767</li>
-                    <li>eswarcfo@gmail.com</li>
+                    <li><strong>Phone:</strong> +1 (913)-846-6767</li>
+                    <li><strong>Email:</strong>eswarcfo@gmail.com</li>
                 </ul>
             </div>
         </div>
         <div class="item">
             <img src="./images/image2.jpg" alt="Marketing Head">
-            <div>
+            <div class= "details" >
+                <h2>Sri teja Valusa</h2>
+                <p>Marketing Head</p>
                 <ul>
-                    <li>Sri teja Valusa</li>
-                    <li>Marketing Head</li>
-                    <li>+1 (913)-498-6767</li>
-                    <li>sritejamarketing@gmail.com</li>
+                    <li><strong>Phone:</strong>+1 (913)-498-6767</li>
+                    <li><strong>Email:</strong>sritejamarketing@gmail.com</li>
                 </ul>
             </div>
         </div>
     </div>
-
-<hr>
-
-    <table >
+<p> </p>
+    <table class="contact-table">
         <tr>
             <th>Talk to us!</th>
             <th>Meet us!!</th>
@@ -82,20 +80,21 @@
         </tr>
         <tr>
             <td >
-                Contact : +1 (913)- 413 - 4349 <br>
-                Mail To : technexusphere@gmail.com
+                <p>Contact : +1 (913)- 413 - 4349 </p>
+                <p>Mail To : technexusphere@gmail.com </p>
             </td>
-            <td style="padding: 20px;" >
-                6123 W 195th St,<br>
-                Overland Park, Kansas.<br>
-                Zip Code : 66223. <br>
-                <a href="https://www.google.com/maps" > Get Directions </a></li>
+            <td>
+                <p>6123 W 195th St,</p>
+                <p> Overland Park, Kansas.</p>
+                <p> Zip Code : 66223. </p>
+                <a href="https://www.google.com/maps" > Get Directions </a>
             </td>
             <td>
                 <ul>
                     <li><a href="https://www.instagram.com" > Instagram </a></li>
                     <li><a href="https://www.facebook.com" > Facebook </a></li>
                     <li><a href="https://www.snapchat.com" > SnapChat </a></li>
+                    <li><a href="https://www.twitter.com" > X(twitter) </a></li>
                     <li><a href="https://www.youtube.com" > Youtube </a></li>
                 </ul>
              </td>

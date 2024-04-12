@@ -1,0 +1,79 @@
+
+nav {
+    background-color: #444;
+    padding: 10px 20px;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ----- css for the leadership images ------ */
+
+.leaders {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 30px; /* Adjust gap between items */
+}
+
+.item {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust item width */
+}
+
+.item img {
+    width: 100%;
+    max-width: 200px; /* Adjust maximum image width */
+    border-radius: 0%;
+    margin-bottom: 20px; /* Adjust spacing between image and details */
+}
+
+.details h2 {
+    margin-top: 0;
+}
+
+.details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details ul li {
+    margin-bottom: 10px;
+}
+
+
+/* ----- css for the contact table ------ */
+.contact-table {
+    background-color: #f2f2f2;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.contact-table th, .contact-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.contact-table th {
+    background-color: #f2f2f2;
+}
+
+.contact-table a {
+    text-decoration: none;
+    color: blue;
+}
+
+.contact-table a:hover {
+    text-decoration: underline;
+}
