@@ -1,15 +1,46 @@
-
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 nav {
-    background-color: #444;
-    padding: 10px 20px;
+    background-color: gray;
+    padding: 20px;
     text-align: center;
 }
 nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     margin: 0 10px;
 }
 nav a:hover {
     text-decoration: underline;
+}
+
+.leaders {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 30px; /* Adjust gap between images */
+}
+.item {
+    text-align: left;
+    font-weight: bold;
     
+}
+.item img {
+    width: 250px; /* Adjust image size */
+    height: 200px;
+    margin-bottom: 10px; /* Adjust spacing between image and text */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

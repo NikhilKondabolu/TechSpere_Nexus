@@ -3,12 +3,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Parametrised Queries</title>
+    <title>Tech Chat Lounge</title>
     <!-- created by Kondabolu -->
     <style type="text/css">
-        table, th, td {
-            border: 1px solid black; border-collapse: collapse;
+        table {
+            border: 1px solid black; border-collapse: collapse; padding: 3px; width:50%; margin-left: auto;  margin-right: auto;
         }
+        th, td {
+            border: 1px solid black; border-collapse: collapse; }
         td { padding: 5px; }
         body {
             margin-left: 20px;
@@ -18,13 +20,26 @@
             padding: 3px;
         }
     </style>
+    <link rel="stylesheet" href="StyleSheet.css">
 </head>
 <body>
-    <h1>Database Connectivity Parametrized Queries</h1>
+<nav>
+        <a href="HomePage.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="service_inquiry.php">Service Inquiry</a>
+        <a href="project_portfolio.php">Project Portfolio</a>
+        <a href="tech_trends_poll.php">Tech Trends Poll</a>
+        <a href="tech_chat_lounge.php">Tech Chat Lounge</a>
+        <a href="knowledge_base.php">Knowledge Base</a>
+        <a href="career_opportunities.php">Career Opportunities</a>
+        <a href="event_calendar.php">Event Calendar</a>
+        <a href="feedback.php">Feedback</a>
+    </nav>
+    <h1>Tech Chat Lounge</h1>
     <form action="" method="POST">
         <span>
-            <label>Select Student Name: </label>
-            <select id="studentselect" name="studentselect">
+            <label>Select a Topic: </label>
+            <select id="topicselect" name="topicselect">
                 <?php
                 include("Inc_IntermediaryClass.php");
                 $intClass = new BusinessTierClass();
@@ -33,11 +48,11 @@
                 while ($row = $result->fetch_assoc()) {
                     $selected = NULL;
                     if (isset($_POST['submit'])) {
-                        if ($_POST['studentselect'] == $row['stuID']) {
+                        if ($_POST['topicselect'] == $row['topic']) {
                             $selected = "selected";
                         }
                     }
-                    echo "<option value=".$row['stuID']." ".$selected.">".$row['studentName']."</option>";
+                    echo "<option value=".$row['topic']." ".$selected.">".$row['topic']."</option>";
                 }
                 ?>
             </select>
@@ -46,22 +61,20 @@
     </form>
     <?php
     if (isset($_POST['submit'])) {
-        $stuID = $_POST['studentselect']; // Corrected variable name
-        $result = $intClass->getData($stuID); // Corrected variable name
+        $id = $_POST['topicselect']; // Corrected variable name
+        $result = $intClass->getData($id); // Corrected variable name
 
         if ($result) {
-            echo "<h4>Grade Details</h4>";
-            echo "<table><tr><td>Student ID</td><td>Student Full Name</td><td>Subject Code</td><td>Subject Name</td><td>Semester</td><td>Grade Description</td><td>Letter Grade</td></tr>";
+            echo "</br></br>";
+            echo "<table><tr><td>Topic</td><td>Description</td><td>Description</td><td>Pro_tip</td><td>Trick</td></tr>";
 
             while ($row = $result->fetch_assoc()) { // Corrected method name
                 echo "<tr>";
-                echo "<td>".$row['stuID']."</td>";
-                echo "<td>".$row['stuName']."</td>";
-                echo "<td>".$row['subjectCode']."</td>";
-                echo "<td>".$row['subjectName']."</td>";
-                echo "<td>".$row['semester']."</td>";
-                echo "<td>".$row['gradeDescription']."</td>";
-                echo "<td>".$row['letterGrade']."</td></tr>";
+                echo "<td>".$row['topic']."</td>";
+                echo "<td>".$row['post_title']."</td>";
+                echo "<td>".$row['post_content']."</td>";
+                echo "<td>".$row['pro_tip']."</td>";
+                echo "<td>".$row['trick']."</td>";
             }
             echo "</table>";
         } else {

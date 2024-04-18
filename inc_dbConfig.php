@@ -7,5 +7,5 @@
 $host="localhost";
 $username="root";
 $password="";
-$database="hogwarts";
+$database="techspere_nexus";
 ?>
