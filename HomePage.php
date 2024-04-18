@@ -49,7 +49,8 @@
         <p>Unleash innovation and explore the nexus of technology with us!</p>
     </header>
     <nav>
-        <a href="about.php">About</a>
+        <a href="HomePage.php">Home</a>
+        <a href="about.php">About Us</a>
         <a href="service_inquiry.php">Service Inquiry</a>
         <a href="project_portfolio.php">Project Portfolio</a>
         <a href="tech_trends_poll.php">Tech Trends Poll</a>
@@ -64,7 +65,7 @@
         <p>TechSphere Nexus is a digital ecosystem tailored for enthusiasts, professionals, and visionaries. We provide a platform for real-time chats, project showcases, and interactive insights in the world of technology.</p>
     </section>
     <footer>
-        <p>&copy; 2024 TechSphere Nexus. All rights reserved.</p>
+        <p> &copy; 2024 TechSphere Nexus. All rights reserved. </p>
     </footer>
 </body>
 </html>

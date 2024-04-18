@@ -1,0 +1,35 @@
+
+nav {
+    background-color: #444;
+    padding: 10px 20px;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+    
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.project {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+.project img {
+    float: left;
+    margin-right: 20px;
+    max-width: 300px;
+    max-height: 200px;
+}
+.project h2 {
+    margin-top: 0;
+}
