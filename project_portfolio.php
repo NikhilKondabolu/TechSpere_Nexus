@@ -22,7 +22,7 @@
     <h1>Project Portfolio of TechSphere_Nexus</h1>
 
     <div class="container">
-        <h2>Recent Projects</h2>
+        <h2>Recent Accomplishments from Us!</h2>
 
         <div class="project">
             <img src="./images/image1.jpg" alt="Project 1">
@@ -45,6 +45,65 @@
             <p><b>Technologies used:</b> </p>
         </div>
     </div>
+
+    <div id="client-reviews">
+        <h2>Clients Testimonials</h2>
+        <ul id="reviews-list">
+            <?php
+            // Sample client reviews stored in an array with images
+            $client_reviews = array(
+                array(
+                    'name' => 'Amazon',
+                    'review' => 'Great service! Very satisfied with the quality.Great service! Very satisfied with the qualityGreat service!,',
+                    'image' => 'images/image1.jpg'
+                ),
+                array(
+                    'name' => 'Google',
+                    'review' => 'Excellent company to work with. Highly recommended.',
+                    'image' => 'images/image1.jpg',
+                ),
+                array(
+                    'name' => 'IBM',
+                    'review' => 'Outstanding support team. They helped me every step of the way.',
+                    'image' => 'images/image1.jpg'
+                )
+            );
+
+            // Looping through each client review and display them
+            foreach ($client_reviews as $review) {
+                echo '<li>';
+                echo '<img src="' . $review['image'] . '" alt="' . $review['name'] . '">';
+                echo '<strong>' . $review['name'] . '</strong>: ' . $review['review'];
+                echo '</li>';
+            }
+            ?>
+        </ul>
+
+        <br>
+    <!-- Button to add a review -->
+        <button id="add-review-btn">Add Review</button>
+    </div>
+
+    <!-- JavaScript to add review on the fly -->
+    <script>
+        // Function to add a review dynamically, but not for storing the review.
+        function addReview() {
+            var name = prompt("Enter your Company name:");
+            var review = prompt("Enter your review:");
+            var image = prompt("Enter image URL (optional):");
+
+            if (name && review) {
+                var newReview = '<li>';
+                if (image) {
+                    newReview += '<img src="' + image + '" alt="' + name + '">';
+                }
+                newReview += '<strong>' + name + '</strong>: ' + review + '</li>';
+                document.getElementById('reviews-list').innerHTML += newReview;
+            }
+        }
+        //Add review when a button is clicked
+        document.getElementById('add-review-btn').addEventListener('click', addReview);
+    </script>
 
     <h2>Need an Estimate for your Project? </h2>
     <form action="incResultEstimation.php" method="POST">
@@ -91,8 +150,7 @@
    
     </form>
 
-
-<!-- created by Eswar  -->
+<!-- created by Eswar   -->
     
 </body>
 </html>

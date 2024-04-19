@@ -15,7 +15,6 @@ nav a:hover {
 }
 .container {
     max-width: 1200px;
-    margin: 20px auto;
     padding: 0 20px;
 }
 .project {
@@ -32,4 +31,33 @@ nav a:hover {
 }
 .project h2 {
     margin-top: 0;
+}
+
+
+/* CSS styles for the client review section */
+#client-reviews {
+    max-width: 800px;
+    /* margin: 0 auto; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#client-reviews h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#client-reviews ul {
+    list-style: none;
+    padding: 0;
+}
+#client-reviews li {
+    margin-bottom: 15px;
+}
+#client-reviews li img {
+    width: 100px;
+    height: 60px;
+    margin-right: 10px;
+}
+#client-reviews li strong {
+    color: #007bff;
 }
