@@ -84,7 +84,7 @@ session_start();
             }
         }
         ?>
-        <p>Please visit the page "<a href="knowledge_base.php">Knowledge Base</a>", return to vote again, and repeat this process. Finally, check the final vote count to determine the current hottest technology trend, according to you.</p>
+        <p>Please visit the page "<a href="Tech_Trends_Poll.php">Tech Trends Poll</a>", return to vote again, and repeat this process. Finally, check the final vote count to determine the current hottest technology trend, according to you.</p>
     </div>
 </body>
 </html>
