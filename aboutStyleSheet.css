@@ -16,30 +16,43 @@ nav a:hover {
 body{
     margin: 0px;
     padding: 0px;
+    background-color: lightcyan;
+}
+
+p {
+    margin-bottom: 20px; /* Adjust spacing between paragraphs */
+    line-height: 1.5; /* Adjust line height for better readability */
+}
+
+ul {
+    padding-left: 40px; /* Adjust padding for bullets */
+    margin-bottom: 20px; /* Adjust spacing between lists */
+}
+
+li {
+    margin-bottom: 5px; /* Adjust spacing between list items */
 }
 
 /* ----- css for the leadership images ------ */
 
 .leaders {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
     gap: 30px; /* Adjust gap between items */
 }
 
 .item {
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: lightcyan;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px;
     width: 300px; /* Adjust item width */
 }
 
 .item img {
     width: 100%;
     max-width: 200px; /* Adjust maximum image width */
-    border-radius: 0%;
+    border-radius: 5px;
     margin-bottom: 20px; /* Adjust spacing between image and details */
 }
 
@@ -59,19 +72,19 @@ body{
 
 /* ----- css for the contact table ------ */
 .contact-table {
-    background-color: #f2f2f2;
+    background-color: lightgray;
     width: 100%;
     border-collapse: collapse;
 }
 
 .contact-table th, .contact-table td {
-    border: 1px solid #ddd;
+    border: 1px solid;
     padding: 10px;
     text-align: left;
 }
 
 .contact-table th {
-    background-color: #f2f2f2;
+    background-color: lightslategray;
 }
 
 .contact-table a {
