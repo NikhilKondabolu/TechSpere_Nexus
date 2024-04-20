@@ -10,20 +10,21 @@ nav a {
     margin: 0 10px;
 }
 nav a:hover {
-    text-decoration: underline;
-    
+    text-decoration: underline;  
 }
 
 body{
     margin: 0px;
     padding: 0px;
+    background-color: lightcyan;
 }
 
-/* Basic styling for the page */
+/* css for technology article and tutorial */
 
 .container {
-    max-width: 100%;
+    max-width: 80%;
     padding: 20px;
+    margin: 30px;
     background-color: lightyellow;
     border-radius: 5px;
 }
@@ -37,8 +38,8 @@ h1 {
 
 /* Styles for FAQ questions */
 .faq-container {
-    max-width: 100%;
-    margin: 0 left;
+    max-width: 80%;
+    margin: 30px;
     padding: 20px;
     background-color: lightcyan;
     border-radius: 10px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Estimation</title>
 </head>
 <body style="background-color: lightcyan;">
     <h1>Final Estimation for the Project.</h1>
