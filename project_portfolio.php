@@ -30,24 +30,46 @@
         <h2>Recent Accomplishments from Us!</h2>
 
         <div class="project">
-            <img src="./images/image1.jpg" alt="Project 1">
-            <h2>Project 1</h2>
-            <p>Description of Project 1 goes here.</p>
-            <p><b>Technologies used:</b> </p>
+            <img src="./images/smartmart.png" alt="Project 1">
+            <h2>SmartMart E-commerce Platform</h2>
+            <p>SmartMart is a comprehensive e-commerce platform designed to streamline the shopping experience for customers while providing robust management tools for administrators. Users can browse a wide range of products, add them to their cart, and securely complete transactions. The platform includes features such as personalized recommendations, order tracking, and flexible payment options. For administrators, SmartMart offers inventory management, sales analytics, and customer relationship management tools.</p>
+            <p>
+                <b>Technologies used:</b>
+                <ul>
+                    <li>Frontend: HTML5, CSS3, JavaScript, React.js </li>
+                    <li>Backend: Node.js, Express.js</li>
+                    <li>Database: MongoDB</li>
+                </ul>
+            </p>
         </div>
 
         <div class="project">
-            <img src="./images/image2.jpg" alt="Project 2">
-            <h2>Project 2</h2>
-            <p>Description of Project 2 goes here.</p>
-            <p><b>Technologies used:</b> </p>
+            <img src="./images/connecthub.png" alt="Project 2">
+            <h2>ConnectHub Social Networking Platform</h2>
+            <p> ConnectHub is a social networking platform designed to connect people with shared interests and passions. Users can create profiles, connect with friends, and join communities based on their hobbies, professional interests, or geographic location. The platform includes features such as messaging, group chats, event planning, and content sharing. ConnectHub aims to foster meaningful connections and facilitate collaboration among its users.</p>
+            <p>
+                <b>Technologies used:</b> 
+                <ul>
+                    <li>Frontend: HTML5, CSS3, JavaScript, React.js </li>
+                    <li>Backend: Python (Django framework)</li>
+                    <li>Database: PostgreSQL</li>
+                </ul>
+            </p>
         </div>
 
         <div class="project">
-            <img src="./images/image1.jpg" alt="Project 3">
-            <h2>Project 3</h2>
-            <p>Description of Project 3 goes here.</p>
-            <p><b>Technologies used:</b> </p>
+            <img src="./images/healthTracker.png" alt="Project 3">
+            <h2>HealthTrack Fitness App</h2>
+            <p>HealthTrack is a fitness tracking application designed to help users achieve their health and wellness goals. The app allows users to track their daily exercise routines, monitor their calorie intake, and set personalized fitness targets. With features such as workout logging, progress tracking, and meal planning, HealthTrack provides users with the tools they need to stay motivated and accountable on their fitness journey.</p>
+            <p>
+                <b>Technologies used:</b>
+                <ul>
+                    <li>Frontend: Flutter </li>
+                    <li>Backend: Firebase</li>
+                    <li>Integration: Google Fit API (for activity tracking)</li>
+                </ul>
+
+            </p>
         </div>
     </div>
 
