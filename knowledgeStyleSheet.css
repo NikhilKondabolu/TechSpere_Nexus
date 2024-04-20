@@ -1,0 +1,80 @@
+/* navigation bar CSS */
+nav {
+    background-color: #444;
+    padding: 10px 20px;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+    
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Basic styling for the page */
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+    background-color: lightyellow;
+    border-radius: 5px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+#article-info {
+    display: none;
+}
+
+/* Styles for FAQ questions */
+.faq-container {
+    max-width: 100%;
+    margin: 0 left;
+    padding: 20px;
+    background-color: lightcyan;
+    border-radius: 10px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.question {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.answer {
+    display: none;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.question:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Style for the active question */
+.question.active {
+    color: #28a745; /* Change color when active */
+}
+
+/* Style for the active answer */
+.answer.active {
+    display: block;
+}

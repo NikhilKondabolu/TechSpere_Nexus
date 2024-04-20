@@ -13,6 +13,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
 /* ----- css for the leadership images ------ */
 
 .leaders {

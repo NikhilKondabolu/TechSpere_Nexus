@@ -17,6 +17,12 @@ nav a:hover {
     max-width: 1200px;
     padding: 0 20px;
 }
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
 .project {
     border: 1px solid #ddd;
     margin-bottom: 20px;
@@ -60,4 +66,38 @@ nav a:hover {
 }
 #client-reviews li strong {
     color: #007bff;
+}
+
+/* CSS styles for manual entry form of client review section */
+
+#add-review-form {
+    display: none; /* Initially hide the form */
+    margin-top: 20px; 
+    padding: 20px; 
+    border: 1px solid ; 
+    border-radius: 10px;
+    background-color: lavender; /* Set a background color for the form */
+}
+
+#add-review-form input[type="text"],
+#add-review-form textarea {
+    width: 100%; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    border: 1px solid ; 
+    border-radius: 5px; /* Add rounded corners to input fields */
+    box-sizing: border-box;
+     /* Include padding and border in element's total width and height */
+}
+
+#add-review-form input[type="submit"] {
+    background-color: lightgreen; 
+    color: black; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; /* Changing the cursor to pointer on hover over the submit button */
+}
+
+#add-review-form input[type="submit"]:hover {
+    background-color: green; /* Change background color on hover */
 }

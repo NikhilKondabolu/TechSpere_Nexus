@@ -1,3 +1,8 @@
+<?php
+    include('clientReviewSession.php')
+?>
+
+<!-- Created By Eswar Kandula -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,27 +55,8 @@
         <h2>Clients Testimonials</h2>
         <ul id="reviews-list">
             <?php
-            // Sample client reviews stored in an array with images
-            $client_reviews = array(
-                array(
-                    'name' => 'Amazon',
-                    'review' => 'Great service! Very satisfied with the quality.Great service! Very satisfied with the qualityGreat service!,',
-                    'image' => 'images/image1.jpg'
-                ),
-                array(
-                    'name' => 'Google',
-                    'review' => 'Excellent company to work with. Highly recommended.',
-                    'image' => 'images/image1.jpg',
-                ),
-                array(
-                    'name' => 'IBM',
-                    'review' => 'Outstanding support team. They helped me every step of the way.',
-                    'image' => 'images/image1.jpg'
-                )
-            );
-
-            // Looping through each client review and display them
-            foreach ($client_reviews as $review) {
+            // Loop through session reviews and display them
+            foreach ($_SESSION['client_reviews'] as $review) {
                 echo '<li>';
                 echo '<img src="' . $review['image'] . '" alt="' . $review['name'] . '">';
                 echo '<strong>' . $review['name'] . '</strong>: ' . $review['review'];
@@ -80,30 +66,25 @@
         </ul>
 
         <br>
-    <!-- Button to add a review -->
+        <!-- Button to toggle the form for adding a review -->
         <button id="add-review-btn">Add Review</button>
+
+        <!-- Form to add a review -->
+        <form id="add-review-form" style="display: none;" method="post">
+            <input type="text" name="name" placeholder="Your Company name" required><br>
+            <textarea name="review" placeholder="Your review" required></textarea><br>
+            <input type="text" name="image" placeholder="Image URL (optional)"><br>
+            <input type="submit" name="submit" value="Submit Review">
+        </form>
     </div>
 
-    <!-- JavaScript to add review on the fly -->
+    <!-- JS to toggle the form -->
     <script>
-        // Function to add a review dynamically, but not for storing the review.
-        function addReview() {
-            var name = prompt("Enter your Company name:");
-            var review = prompt("Enter your review:");
-            var image = prompt("Enter image URL (optional):");
-
-            if (name && review) {
-                var newReview = '<li>';
-                if (image) {
-                    newReview += '<img src="' + image + '" alt="' + name + '">';
-                }
-                newReview += '<strong>' + name + '</strong>: ' + review + '</li>';
-                document.getElementById('reviews-list').innerHTML += newReview;
-            }
-        }
-        //Add review when a button is clicked
-        document.getElementById('add-review-btn').addEventListener('click', addReview);
+        document.getElementById('add-review-btn').addEventListener('click', function() {
+            document.getElementById('add-review-form').style.display = 'block'; // changing the display from none to block.
+        });
     </script>
+
 
     <h2>Need an Estimate for your Project? </h2>
     <form action="incResultEstimation.php" method="POST">
