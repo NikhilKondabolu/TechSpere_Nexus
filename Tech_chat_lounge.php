@@ -2,8 +2,23 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!-- Created by Valusa -->
-    <title>TechSphere Nexus - Homepage</title>
+    <title>Tech Chat Lounge</title>
+    <!-- created by Kondabolu -->
+    <style type="text/css">
+        table {
+            border: 1px solid black; border-collapse: collapse; padding: 3px; width:50%; margin-left: auto;  margin-right: auto;
+        }
+        th, td {
+            border: 1px solid black; border-collapse: collapse; }
+        td { padding: 5px; }
+        body {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        select {
+            padding: 3px;
+        }
+    </style>
     <link rel="stylesheet" href="StyleSheet.css">
 </head>
 <body>
@@ -60,64 +75,48 @@ if (isset($_POST['topic_submit'])) {
 } else {
     echo "<form action='' method='POST'>
             <label>Select a Topic: </label>
-            <select id='topicselect' name='topicselect'>
-                <option value='Artificial Intelligence'>Artificial Intelligence</option>
-                <option value='Machine Learning'>Machine Learning</option>
-                <option value='Cloud Computing'>Cloud Computing</option>
-                <option value='Internet of Things'>Internet of Things</option>
+            <select id="topicselect" name="topicselect">
+                <?php
+                include("Inc_IntermediaryClass.php");
+                $intClass = new BusinessTierClass();
+                $result = $intClass->filloptions();
+
+                while ($row = $result->fetch_assoc()) {
+                    $selected = NULL;
+                    if (isset($_POST['submit'])) {
+                        if ($_POST['topicselect'] == $row['topic']) {
+                            $selected = "selected";
+                        }
+                    }
+                    echo "<option value=".$row['topic']." ".$selected.">".$row['topic']."</option>";
+                }
+                ?>
             </select>
-            <input type='submit' value='submit' name='topic_submit'/>
-          </form>";
-}
+            <input type="submit" value="submit" name="submit"/>
+        </span>
+    </form>
+    <?php
+    if (isset($_POST['submit'])) {
+        $id = $_POST['topicselect']; // Corrected variable name
+        $result = $intClass->getData($id); // Corrected variable name
 
-if (isset($_POST['feedback_submit'])) {
-    if ($_POST['feedback'] == 'Yes') {
-        echo "<p>Thank you! Visit again.</p>";
-    } else {
-        // Display the form again with the error message
-        echo "<form action='' method='POST'>
-                <label>Name:</label>
-                <input type='text' name='name' required>
-                <label>Phone Number:</label>
-                <input type='text' name='phone' required>
-                <input type='submit' value='Submit' name='contact_submit'>
-              </form>";
+        if ($result) {
+            echo "</br></br>";
+            echo "<table><tr><td>Topic</td><td>Description</td><td>Description</td><td>Pro_tip</td><td>Trick</td></tr>";
+
+            while ($row = $result->fetch_assoc()) { // Corrected method name
+                echo "<tr>";
+                echo "<td>".$row['topic']."</td>";
+                echo "<td>".$row['post_title']."</td>";
+                echo "<td>".$row['post_content']."</td>";
+                echo "<td>".$row['pro_tip']."</td>";
+                echo "<td>".$row['trick']."</td>";
+            }
+            echo "</table>";
+        } else {
+            echo $intClass->error; // Added missing arrow (->) operator
+        }
     }
-}
-
-if (isset($_POST['contact_submit'])) {
-    // Include UserResponse.php
-    include("UserResponse.php");
-
-    // Get name and phone number from form
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-
-    // Validate name and phone number
-    if (strlen(trim($name)) > 0 && is_numeric($phone)) {
-        // Create HelloWorldClass instance
-        $welcomeInstance = new HelloWorldClass($name, $phone);
-        // Get welcome message
-        $message = $welcomeInstance->Welcome();
-        // Display welcome message
-        echo "<h3>$message</h3>";
-    } else {
-        // Display the form again with the error message
-        echo "<form action='' method='POST'>
-                <label>Name:</label>
-                <input type='text' name='name' required>
-                <label>Phone Number:</label>
-                <input type='text' name='phone' required>
-                <input type='submit' value='Submit' name='contact_submit'>
-              </form>";
-        
-        // Display error message if validation fails
-        echo "<h3>Invalid input: Enter your name and number correctly and try again!</h3>";
-    }
-}
-?>
-<footer>
-    <p>&copy; 2024 TechSphere Nexus. All rights reserved.</p>
-</footer>
+    ?>
 </body>
 </html>

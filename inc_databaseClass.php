@@ -31,7 +31,7 @@ class DataConnectClass {
 
     // Connect() method.
 
-    public function ParamSelectQuery($sqlQuery, $datatypes = NULL, $param1 = NULL, $param2 = NULL, $param3 = NULL, $param4 = NULL, $param5 = NULL, $param6 = NULL) {
+    public function ParamSelectQuery($sqlQuery, $datatypes = NULL, ...$params) {
         // This method received a SQL query in a format ready to be prepared, i.e., with '?' and supply the parameters for it exactly in the right order. 
         // The $datatypes param contains the data types supplied for each parameter, in the correct order.
         
@@ -45,18 +45,9 @@ class DataConnectClass {
         $sqlStatement = $connection->stmt_init();
         $sqlStatement= $connection->prepare($sqlQuery);
 
-        // Create an array of parameters which are not null.
-        $paramArray = array();
-
-        if (!is_null($param1)) array_push($paramArray, $param1);
-        if (!is_null($param2)) array_push($paramArray, $param2);
-        if (!is_null($param3)) array_push($paramArray, $param3);
-        if (!is_null($param4)) array_push($paramArray, $param4);
-        if (!is_null($param5)) array_push($paramArray, $param5);
-        if (!is_null($param6)) array_push($paramArray, $param6);
-
+       
         // Bind the statement with parameters.
-        $bindResult = $sqlStatement->bind_param($datatypes, ...$paramArray);
+        $bindResult = $sqlStatement->bind_param($datatypes, ...$params);
 
         if ($bindResult) {
             $sqlStatement->execute();
