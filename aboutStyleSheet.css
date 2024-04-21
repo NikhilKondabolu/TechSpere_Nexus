@@ -36,8 +36,9 @@ li {
 /* ----- css for the leadership images ------ */
 
 .leaders {
-    display: flex;
-    gap: 30px; /* Adjust gap between items */
+    display:flex;
+    padding:0px 40px;
+    gap: 100px; /* Adjust gap between items */
 }
 
 .item {
@@ -94,4 +95,12 @@ li {
 
 .contact-table a:hover {
     text-decoration: underline;
+}
+footer {
+    background-color:black;
+    color:white;
+    text-align: center;
+    padding: 10px 0px;
+    position: relative; /* Change position to relative */
+    width: 100%;
 }

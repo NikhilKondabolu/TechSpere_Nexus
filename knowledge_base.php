@@ -142,6 +142,10 @@
         <button id="reset-button" onclick="resetBackgroundColor()">Reset Color</button>
     </div>
 
+    <footer>
+        <p> &copy; 2024 TechSphere Nexus. All rights reserved. </p>
+    </footer>
+
     <script type="text/javascript" src="knowledgeJS.js"></script>
 </body>
 </html>

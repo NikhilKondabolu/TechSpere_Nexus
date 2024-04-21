@@ -153,6 +153,10 @@
    
     </form>
 
+    <footer>
+        <p> &copy; 2024 TechSphere Nexus. All rights reserved. </p>
+    </footer>
+
 <!-- created by Eswar   -->
     
 </body>

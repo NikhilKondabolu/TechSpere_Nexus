@@ -102,3 +102,11 @@ body{
 #add-review-form input[type="submit"]:hover {
     background-color: green; /* Change background color on hover */
 }
+footer {
+    background-color:black;
+    color:white;
+    text-align: center;
+    padding: 10px 0px;
+    position: relative; /* Change position to relative */
+    width: 100%;
+}
