@@ -102,7 +102,6 @@ session_start();
             <thead><tr><td>Trail #</td><td>Topic</td></tr></thead>
             <tbody id="tablebody"></tbody>
             <tbody id="topicCountsBody"></tbody></table>
-
     </div>
 </body>
 </html>

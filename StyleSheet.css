@@ -17,25 +17,7 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
-form {
-    padding-left: 20px;
-}
-label {
-    display: inline-block;
-}
-section {
-    padding: 20px;   
-}
-body {
-    margin: 0;
-    padding: 0;
-}
-img {
-    display: block;
-    margin: 0 auto;
-    max-height: auto;
-    max-width: 100%;   
-}
+
 .leaders {
     display: flex;
     flex-wrap: wrap;
@@ -57,9 +39,8 @@ footer {
     background-color: steelblue;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    padding: 10px 20px;
+    position: relative; /* Change position to relative */
     width: 100%;
 }
 table {
