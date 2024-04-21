@@ -6,12 +6,14 @@ session_start();
 <html>
 <head>
     <title>Tech Trends Poll</title>
+    <script type="text/javascript" src="play.js"></script>
     <style>
         .poll-container {
-            margin: 50px auto;
-            width: 500px;
+            margin: 10px auto;
+            width: 2000px;
             text-align: left;
             text-align: center;
+            table-layout: cent;
         }
 
         .poll-options {
@@ -22,6 +24,15 @@ session_start();
         }
         .poll-results {
             font-weight: bold;
+        }
+        #poll-table {
+            display: none;
+            margin: 0 auto;
+        }
+        #topicCountsBody {
+            background-color: darkgray;
+            font-weight: bold;
+            border: 2px solid black;
         }
     </style>
     <link rel="stylesheet" href="StyleSheet.css">
@@ -84,7 +95,14 @@ session_start();
             }
         }
         ?>
-        <p>Please visit the page "<a href="knowledge_base.php">Knowledge Base</a>", return to vote again, and repeat this process. Finally, check the final vote count to determine the current hottest technology trend, according to you.</p>
+        <p>Please visit the page "<a href="knowledge_base.php">Knowledge Base</a>", return to vote again, and repeat this process. Finally, check the final vote count to determine the current hottest technology trend, according to you.</p></br></br>
+        <p>If you are unable to determine the current hottest technology trend, play a game to allow the system decide.  </p><input type="button" id="play" value="Play">   <input type="button" id="retry" value="Retry">
+        </br></br></br>
+        <table  id="poll-table">
+            <thead><tr><td>Trail #</td><td>Topic</td></tr></thead>
+            <tbody id="tablebody"></tbody>
+            <tbody id="topicCountsBody"></tbody></table>
+
     </div>
 </body>
 </html>

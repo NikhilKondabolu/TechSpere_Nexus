@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>Tech Chat Lounge</title>
     <!-- created by Kondabolu -->
+    <link rel="stylesheet" href="StyleSheet.css">
     <style type="text/css">
         table {
-            border: 1px solid black; border-collapse: collapse; padding: 3px; width:50%; margin-left: auto;  margin-right: auto;
+            border: 1px solid black; border-collapse: collapse; padding: 3px; width:100%; margin-left: auto;  margin-right: auto;
         }
         th, td {
             border: 1px solid black; border-collapse: collapse; }
@@ -20,7 +21,6 @@
             padding: 3px;
         }
     </style>
-    <link rel="stylesheet" href="StyleSheet.css">
 </head>
 <body>
 <nav>
@@ -39,7 +39,7 @@
     <form action="" method="POST">
         <span>
             <label>Select a Topic: </label>
-            <select id="topicselect" name="topicselect">
+            <select id="topicselect" name="topicselect[]" multiple>
                 <?php
                 include("Inc_IntermediaryClass.php");
                 $intClass = new BusinessTierClass();
@@ -61,14 +61,17 @@
     </form>
     <?php
     if (isset($_POST['submit'])) {
-        $id = $_POST['topicselect']; // Corrected variable name
-        $result = $intClass->getData($id); // Corrected variable name
+        $id = $_POST['topicselect'];   
+        if (!is_array($id)) {
+            $id = array($id);
+        }   
+            $result = $intClass->getData($id);
 
         if ($result) {
             echo "</br></br>";
-            echo "<table><tr><td>Topic</td><td>Description</td><td>Description</td><td>Pro_tip</td><td>Trick</td></tr>";
+            echo "<table><tr><td>Topic</td><td>Title</td><td>Description</td><td>Pro_tip</td><td>Trick</td></tr>";
 
-            while ($row = $result->fetch_assoc()) { // Corrected method name
+            while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>".$row['topic']."</td>";
                 echo "<td>".$row['post_title']."</td>";
@@ -78,7 +81,7 @@
             }
             echo "</table>";
         } else {
-            echo $intClass->error; // Added missing arrow (->) operator
+            echo $intClass->error;
         }
     }
     ?>

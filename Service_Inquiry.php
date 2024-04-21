@@ -50,12 +50,20 @@
                 <option value="1" <?php if(isset($_POST['selectservice']) && $_POST['selectservice'] == '1') echo 'selected'; ?>><?php echo $servicearray[1]; ?></option>
                 <option value="2" <?php if(isset($_POST['selectservice']) && $_POST['selectservice'] == '2') echo 'selected'; ?>><?php echo $servicearray[2]; ?></option>
             </select>
-        </p></br>
-        <input type="Submit" name="Submit" value="Submit"></br></br>
+        </p></br><p>
+        <input type="Submit" name="Submit" value="Submit"> 
+        <input type="reset" name="reset" value="Reset"></br></br></p>
         <p><?php
         if(isset($_POST['Submit'])) {
         // Form submitted, display thank you message
-        echo "<p>Thank you, we will get back to you soon.</p>";
+        echo "<p>Your Reference number is : ". rand(100000, 900000) ."</p>";
+        echo "<script>alert('Thank you, we will get back to you soon.');</script>";
+        // Reset form fields
+        $_POST['Name'] = '';
+        $_POST['Company'] = '';
+        $_POST['Email_ID'] = '';
+        $_POST['Phone'] = '';
+        $_POST['selectservice'] = '0';
         }    ?></p>
          </form>
 </body>
