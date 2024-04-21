@@ -4,19 +4,6 @@ header {
     padding: 20px;
     text-align: center;
 }
-nav {
-    background-color: navy;
-    padding: 20px;
-    text-align: center;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-nav a:hover {
-    text-decoration: underline;
-}
 
 .leaders {
     display: flex;
@@ -35,17 +22,44 @@ nav a:hover {
     margin-bottom: 10px; /* Adjust spacing between image and text */
 }
 
+
+table {
+    border: 1px solid black; border-collapse: collapse; padding: 3px; width:25%; margin-left: auto;  margin-right: auto;
+}
+thead, th, td {
+    border: 1px solid black; border-collapse: collapse; }
+td { padding: 5px; }  
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: lightcyan;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 80px;
+} 
+
+select {
+    padding: 3px;
+}
+nav {
+    background-color: navy;
+    padding: 20px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
 footer {
     background-color: steelblue;
     color: white;
     text-align: center;
     padding: 10px 20px;
-    position: relative; /* Change position to relative */
+    position: fixed;
+    bottom: 0%;
     width: 100%;
-}
-table {
-    border: 1px solid black; border-collapse: collapse; padding: 3px; width:25%; margin-left: auto;  margin-right: auto;
-}
-thead, td {
-    border: 1px solid black; border-collapse: collapse; }
-td { padding: 5px; }    
+    }

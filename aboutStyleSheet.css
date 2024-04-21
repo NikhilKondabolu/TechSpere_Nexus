@@ -1,11 +1,11 @@
 
 nav {
-    background-color: #444;
-    padding: 10px 20px;
+    background-color: navy;
+    padding: 20px;
     text-align: center;
 }
 nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -17,6 +17,8 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: lightcyan;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 p {
@@ -97,10 +99,11 @@ li {
     text-decoration: underline;
 }
 footer {
-    background-color:black;
-    color:white;
+    background-color: steelblue;;
+    color: white;
     text-align: center;
-    padding: 10px 0px;
-    position: relative; /* Change position to relative */
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-}
+  }  

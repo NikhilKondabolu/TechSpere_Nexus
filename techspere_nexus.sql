@@ -1,43 +1,14 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Apr 12, 2024 at 06:29 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+CREATE DATABASE `techspere_nexus`;
 
---
--- Database: `techspere_nexus`
---
 
--- --------------------------------------------------------
+USE `techspere_nexus`;
 
---
--- Table structure for table `messages`
---
-
-CREATE TABLE `messages` (
-  `id` int(11) NOT NULL,
-  `message_content` text NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tech_topics`
---
 
 CREATE TABLE `tech_topics` (
   `id` int(11) NOT NULL,
@@ -48,9 +19,7 @@ CREATE TABLE `tech_topics` (
   `trick` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tech_topics`
---
+
 
 INSERT INTO `tech_topics` (`id`, `topic`, `post_title`, `post_content`, `pro_tip`, `trick`) VALUES
 (1, 'programming', 'Introduction to Programming', 'Programming is the process of designing, writing, testing, and maintaining source code for computer programs. It involves understanding algorithms, data structures, and problem-solving techniques. Programming languages such as Python, Java, C++, and JavaScript are commonly used to create software applications, websites, and mobile apps.', 'Practice regularly and try to solve real-world problems to improve your programming skills.', 'Break down complex problems into smaller, manageable tasks, and tackle them one at a time.'),
@@ -92,15 +61,6 @@ INSERT INTO `tech_topics` (`id`, `topic`, `post_title`, `post_content`, `pro_tip
 (37, 'scalability', 'Designing Scalable Software Architectures', 'Scalability is the ability of a software application or system to handle increasing workload and user demands without sacrificing performance or reliability. Scalable architectures use techniques such as horizontal scaling, vertical scaling, load balancing, caching, and microservices to distribute workload, optimize resources, and maintain responsiveness under heavy loads.', 'Design software architectures with scalability in mind from the outset, considering factors like data partitioning, asynchronous processing, and distributed caching.', 'Monitor key performance metrics like response time, throughput, and resource utilization to identify scalability bottlenecks and optimize system performance proactively.'),
 (38, 'performance', 'Optimizing Software Performance', 'Software performance refers to the responsiveness, speed, and efficiency of a software application or system under various conditions and workloads. Performance optimization involves identifying and eliminating performance bottlenecks, optimizing algorithms and data structures, and minimizing resource usage to improve user experience and system reliability.', 'Use performance profiling and monitoring tools like Chrome DevTools, Apache JMeter, or New Relic to identify performance bottlenecks and optimize critical paths in your application.', 'Implement caching strategies, lazy loading, and pagination techniques to reduce server load, decrease page load times, and improve overall system performance.');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tech_topics`
@@ -109,22 +69,9 @@ ALTER TABLE `tech_topics`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tech_topics`
 --
 ALTER TABLE `tech_topics`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
