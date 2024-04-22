@@ -113,3 +113,29 @@ footer {
     position: relative;
     width: 100%;
   }  
+  .poll-container {
+    margin: 10px auto;
+    width: 2000px;
+    text-align: left;
+    text-align: center;
+    table-layout: cent;
+}
+
+.poll-options {
+    margin-bottom: 20px;
+}
+.poll-options input[type="radio"] {
+    margin-right: 10px;
+}
+.poll-results {
+    font-weight: bold;
+}
+#poll-table {
+    display: none;
+    margin: 0 auto;
+}
+#topicCountsBody {
+    background-color: darkgray;
+    font-weight: bold;
+    border: 2px solid black;
+}

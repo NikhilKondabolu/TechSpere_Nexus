@@ -5,38 +5,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Tech Trends Poll</title>
     <script type="text/javascript" src="play.js"></script>
-    <style>
-        .poll-container {
-            margin: 10px auto;
-            width: 2000px;
-            text-align: left;
-            text-align: center;
-            table-layout: cent;
-        }
-
-        .poll-options {
-            margin-bottom: 20px;
-        }
-        .poll-options input[type="radio"] {
-            margin-right: 10px;
-        }
-        .poll-results {
-            font-weight: bold;
-        }
-        #poll-table {
-            display: none;
-            margin: 0 auto;
-        }
-        #topicCountsBody {
-            background-color: darkgray;
-            font-weight: bold;
-            border: 2px solid black;
-        }
-    </style>
     <link rel="stylesheet" href="StyleSheet.css">
-    
 </head>
 <body>
 <nav>

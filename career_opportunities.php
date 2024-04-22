@@ -32,6 +32,15 @@
             border: 1px solid #ddd;
             border-radius: 8px;
         }
+
+        .apply-button {
+            background-color: #007BA7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -55,26 +64,29 @@
     <div class="job-opportunity">
         <div class="opportunity-title">Current Job Openings</div>
         <div class="opportunity-details">
-            <div class="job-opening">
+            <div class="job-opening" id="job1">
                 <p><strong>Job Title:</strong> Senior Frontend Developer</p>
                 <p><strong>Department:</strong> Engineering</p>
                 <p><strong>Location:</strong> Remote</p>
                 <p><strong>Responsibilities:</strong> Develop user-friendly web interfaces, collaborate with backend developers, optimize application performance.</p>
                 <p><strong>Qualifications:</strong> Bachelor's degree in Computer Science or related field, strong proficiency in JavaScript, HTML, CSS, experience with frontend frameworks (e.g., React, Angular).</p>
+                <button class="apply-button">Apply Now</button>
             </div>
-            <div class="job-opening">
+            <div class="job-opening" id="job2">
                 <p><strong>Job Title:</strong> Data Scientist</p>
                 <p><strong>Department:</strong> Data Analytics</p>
                 <p><strong>Location:</strong> New York City, NY</p>
                 <p><strong>Responsibilities:</strong> Analyze complex datasets, build predictive models, visualize data insights, communicate findings to stakeholders.</p>
                 <p><strong>Qualifications:</strong> Master's degree in Statistics, Mathematics, or related field, proficiency in programming (Python, R), experience with machine learning algorithms and tools.</p>
+                <button class="apply-button">Apply Now</button>
             </div>
-            <div class="job-opening">
+            <div class="job-opening" id="job3">
                 <p><strong>Job Title:</strong> IT Security Analyst</p>
                 <p><strong>Department:</strong> Information Security</p>
                 <p><strong>Location:</strong> San Francisco, CA</p>
                 <p><strong>Responsibilities:</strong> Monitor network traffic, detect security breaches, conduct vulnerability assessments, implement security measures.</p>
                 <p><strong>Qualifications:</strong> Bachelor's degree in Cybersecurity, Information Technology, or related field, knowledge of security protocols and encryption algorithms, experience with security tools (e.g., SIEM, IDS/IPS).</p>
+                <button class="apply-button">Apply Now</button>
             </div>
         </div>
     </div>
@@ -83,26 +95,29 @@
     <div class="internship-opportunity">
         <div class="opportunity-title">Internship Opportunities</div>
         <div class="opportunity-details">
-            <div class="internship-opening">
+            <div class="internship-opening" id="internship1">
                 <p><strong>Internship Title:</strong> Software Engineering Intern</p>
                 <p><strong>Department:</strong> Engineering</p>
                 <p><strong>Duration:</strong> 3 months</p>
                 <p><strong>Responsibilities:</strong> Assist in software development projects, write code, perform testing, participate in team meetings.</p>
                 <p><strong>Eligibility:</strong> Currently pursuing a degree in Computer Science or related field, strong programming skills (preferably in Java, Python).</p>
+                <button class="apply-button">Apply Now</button>
             </div>
-            <div class="internship-opening">
+            <div class="internship-opening" id="internship2">
                 <p><strong>Internship Title:</strong> Marketing Intern</p>
                 <p><strong>Department:</strong> Marketing</p>
                 <p><strong>Duration:</strong> 6 weeks</p>
                 <p><strong>Responsibilities:</strong> Support marketing campaigns, create social media content, conduct market research, assist with event planning.</p>
                 <p><strong>Eligibility:</strong> Pursuing a degree in Marketing, Communications, or related field, strong communication skills, familiarity with social media platforms.</p>
+                <button class="apply-button">Apply Now</button>
             </div>
-            <div class="internship-opening">
+            <div class="internship-opening" id="internship3">
                 <p><strong>Internship Title:</strong> Data Analysis Intern</p>
                 <p><strong>Department:</strong> Data Analytics</p>
                 <p><strong>Duration:</strong> 12 weeks</p>
                 <p><strong>Responsibilities:</strong> Clean and preprocess data, perform statistical analysis, generate reports, assist with dashboard development.</p>
                 <p><strong>Eligibility:</strong> Enrolled in a statistics, mathematics, or data science program, familiarity with statistical software (e.g., R, SAS), attention to detail.</p>
+                <button class="apply-button">Apply Now</button>
             </div>
         </div>
     </div>
@@ -129,5 +144,19 @@
 <footer>
     <p>&copy; 2024 TechSphere Nexus. All rights reserved.</p>
 </footer>
+
+<script>
+    var applyButtons = document.querySelectorAll('.apply-button');
+    applyButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var name = prompt("Please enter your name:");
+            var number = prompt("Please enter your phone number:");
+            if (name !== null && number !== null) {
+                alert("Thanks for your application, " + name + "! We will get back to you.");
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

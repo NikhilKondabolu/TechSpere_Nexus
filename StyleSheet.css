@@ -22,7 +22,32 @@ header {
     margin-bottom: 10px; /* Adjust spacing between image and text */
 }
 
+.poll-container {
+    margin: 10px auto;
+    width: 1000px;
+    text-align: left;
+    text-align: center;
+    table-layout: cent;
+}
 
+.poll-options {
+    margin-bottom: 20px;
+}
+.poll-options input[type="radio"] {
+    margin-right: 10px;
+}
+.poll-results {
+    font-weight: bold;
+}
+#poll-table {
+    display: none;
+    margin: 0 auto;
+}
+#topicCountsBody {
+    background-color: darkgray;
+    font-weight: bold;
+    border: 2px solid black;
+}
 table {
     border: 1px solid black; border-collapse: collapse; padding: 3px; width:25%; margin-left: auto;  margin-right: auto;
 }
@@ -58,8 +83,8 @@ footer {
     background-color: steelblue;
     color: white;
     text-align: center;
-    padding: 5px 5px;
+    padding: 10px 0;
     position: fixed;
-    bottom: 0%;
+    bottom: 0;
     width: 100%;
     }
