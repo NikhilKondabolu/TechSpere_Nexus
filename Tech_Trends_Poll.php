@@ -36,6 +36,7 @@ session_start();
         }
     </style>
     <link rel="stylesheet" href="StyleSheet.css">
+    
 </head>
 <body>
 <nav>
@@ -103,5 +104,8 @@ session_start();
             <tbody id="tablebody"></tbody>
             <tbody id="topicCountsBody"></tbody></table>
     </div>
+    <footer>
+        <p> &copy; 2024 TechSphere Nexus. All rights reserved. </p>
+    </footer>
 </body>
 </html>

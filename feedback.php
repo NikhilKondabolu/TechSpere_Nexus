@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="StyleSheet.css">
 </head>
 <body>
-<header>
-    <h1>Welcome to TechSphere Nexus</h1>
-    <p>Unleash innovation and explore the nexus of technology with us!</p>
-</header>
 <nav>
     <a href="HomePage.html">Home</a>
     <a href="about.html">About Us</a>

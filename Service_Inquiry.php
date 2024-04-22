@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-<style>
-</style>
 <head>
     <!-- Created by Kondabolu -->
     <title>Service Inquiry</title>
@@ -22,23 +20,23 @@
         <a href="event_calendar.php">Event Calendar</a>
         <a href="feedback.php">Feedback</a>
     </nav>
-    <h1  style="margin-left: 20px;">Inquiry Form</h1></br>
+    <h1>Inquiry Form</h1></br>
     <form  method="post" action="Service_Inquiry.php">
         <p>
             <label for="Name">Please Enter Your Name:</label>
-            <input type="text" name="Name" value="<?php if(isset($_POST['Name'])) echo $_POST['Name'] ?>">
+            <input type="text" name="Name" value="<?php if(isset($_POST['Name'])) echo $_POST['Name'] ?>" pattern="[A-Za-z ]+" title="Please enter only alphabets" required>
         </p></br>
         <p>
             <label for="Company">Please Enter your Company:</label>
-            <input type="text" name="Company" value="<?php if(isset($_POST['Company'])) echo $_POST['Company'] ?>">
+            <input type="text" name="Company" value="<?php if(isset($_POST['Company'])) echo $_POST['Company'] ?>" required>
         </p></br>
         <p>
             <label for="Email_ID">Please Enter your Email_ID:</label>
-            <input type="text" name="Email_ID" value="<?php if(isset($_POST['Email_ID'])) echo $_POST['Email_ID'] ?>">
+            <input type="text" name="Email_ID" value="<?php if(isset($_POST['Email_ID'])) echo $_POST['Email_ID'] ?>" pattern="[A-Za-z@a-z.a-z ]+" title="Please enter correct mailId" required>
         </p></br>
         <p>
             <label for="Phone">Please Enter your Phone:</label>
-            <input type="text" name="Phone" value="<?php if(isset($_POST['Phone'])) echo $_POST['Phone'] ?>">
+            <input type="text" name="Phone" value="<?php if(isset($_POST['Phone'])) echo $_POST['Phone'] ?>" pattern="[0-9]+" title="Please enter correct phone number" required>
         </p></br>
         <?php
         $servicearray = array("Consulting","Development","Training"); //array with all services
@@ -51,20 +49,16 @@
                 <option value="2" <?php if(isset($_POST['selectservice']) && $_POST['selectservice'] == '2') echo 'selected'; ?>><?php echo $servicearray[2]; ?></option>
             </select>
         </p></br><p>
-        <input type="Submit" name="Submit" value="Submit"> 
-        <input type="reset" name="reset" value="Reset"></br></br></p>
-        <p><?php
+        <input type="Submit" name="Submit" value="Submit"> </p>
+        <?php
         if(isset($_POST['Submit'])) {
         // Form submitted, display thank you message
         echo "<p>Your Reference number is : ". rand(100000, 900000) ."</p>";
         echo "<script>alert('Thank you, we will get back to you soon.');</script>";
-        // Reset form fields
-        $_POST['Name'] = '';
-        $_POST['Company'] = '';
-        $_POST['Email_ID'] = '';
-        $_POST['Phone'] = '';
-        $_POST['selectservice'] = '0';
         }    ?></p>
          </form>
+    <footer>
+        <p> &copy; 2024 TechSphere Nexus. All rights reserved. </p>
+    </footer>
 </body>
 </html>
