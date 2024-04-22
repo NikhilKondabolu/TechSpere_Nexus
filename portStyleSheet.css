@@ -1,18 +1,23 @@
-
+header {
+    background-color: steelblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 nav {
-    background-color: #444;
-    padding: 10px 20px;
+    background-color: navy;
+    padding: 20px;
     text-align: center;
 }
 nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     margin: 0 10px;
 }
 nav a:hover {
     text-decoration: underline;
-    
 }
+
 /* CSS styles for the projects section */
 .container {
     max-width: 1200px;
@@ -103,7 +108,7 @@ body{
     background-color: green; /* Change background color on hover */
 }
 footer {
-    background-color:black;
+    background-color:steelblue;
     color:white;
     text-align: center;
     padding: 10px 0px;
